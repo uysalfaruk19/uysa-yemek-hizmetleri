@@ -26,7 +26,7 @@ org = {"@context": "https://schema.org", "@type": "Organization", "name": "UYSA 
        "url": "https://uysayemek.com.tr/", "telephone": "+90 262 744 81 19", "email": "info@uysayemek.com.tr",
        "address": {"@type": "PostalAddress", "streetAddress": "Şekerpınar Mah. Muhsin Yazıcıoğlu Cd. No:15", "addressLocality": "Çayırova", "addressRegion": "Kocaeli", "postalCode": "41420", "addressCountry": "TR"},
        "areaServed": ["Gebze", "Çayırova", "Dilovası", "Darıca", "Kocaeli"],
-       "sameAs": ["https://uysayemek.com.tr/", "https://yemekhaneci.com.tr/", "https://www.instagram.com/uysayemek/", "https://uysayemek.blogspot.com/", "https://uysa-yemek-gebze.blogspot.com/", "https://uysa-yemek-kocaeli.blogspot.com/", "https://uysa-yemek-catering.blogspot.com/", "https://uysa-yemek-hizmetleri.blogspot.com/", "https://uysa-yemek.blogspot.com/", "https://sites.google.com/view/uysa-yemek-hizmetleri", "https://www.youtube.com/watch?v=RNWZN-WmlNU", "https://gist.github.com/uysalfaruk19/184b567bdd9c786d9f261e1cecf628fd", "https://docs.google.com/document/d/e/2PACX-1vQEiJuTKoeYeBl9iSCh6rvtO55EWTuI8OpqsdOVRnXpFfa1rQXwdVNJjhee27DllbTMJGz1sGAO6ZZB/pub"]}
+       "sameAs": ["https://uysayemek.com.tr/", "https://yemekhaneci.com.tr/", "https://www.instagram.com/uysayemek/", "https://uysayemek.blogspot.com/", "https://uysa-yemek-gebze.blogspot.com/", "https://uysa-yemek-kocaeli.blogspot.com/", "https://uysa-yemek-catering.blogspot.com/", "https://uysa-yemek-hizmetleri.blogspot.com/", "https://uysa-yemek.blogspot.com/", "https://uysa-tabldot.blogspot.com/", "https://sites.google.com/view/uysa-yemek-hizmetleri", "https://www.youtube.com/watch?v=RNWZN-WmlNU", "https://gist.github.com/uysalfaruk19/184b567bdd9c786d9f261e1cecf628fd", "https://docs.google.com/document/d/e/2PACX-1vQEiJuTKoeYeBl9iSCh6rvtO55EWTuI8OpqsdOVRnXpFfa1rQXwdVNJjhee27DllbTMJGz1sGAO6ZZB/pub"]}
 yazilan = []
 for i, p in enumerate(sayfalar):
     yol = KOK / "index.html" if i == 0 else KOK / p["slug"] / "index.html"
@@ -42,13 +42,13 @@ for i, p in enumerate(sayfalar):
         f'<main><h1>{html.escape(h1)}</h1><p class="giris">{html.escape(p["ozet"])}</p>{p["govde"]}{kartlar}</main>'
         f'<footer><div class="w">UYSA Yemek Hizmetleri · Şekerpınar Mah. Muhsin Yazıcıoğlu Cd. No:15, Çayırova / Kocaeli · 0262 744 81 19 · '
         f'<a href="https://uysayemek.com.tr/">uysayemek.com.tr</a> · <a href="https://yemekhaneci.com.tr/">yemekhaneci.com.tr</a> · '
-        f'<a href="https://uysayemek.blogspot.com/">Blog</a> · <a href="https://uysa-yemek-gebze.blogspot.com/">Gebze Blog</a> · <a href="https://uysa-yemek-kocaeli.blogspot.com/">Kocaeli Blog</a> · <a href="https://uysa-yemek-catering.blogspot.com/">Catering Blog</a> · <a href="https://uysa-yemek-hizmetleri.blogspot.com/">UYSA Yemek Hizmetleri Blog</a> · <a href="https://uysa-yemek.blogspot.com/">UYSA Yemek Gıda Güvenliği Blog</a> · <a href="https://www.youtube.com/watch?v=RNWZN-WmlNU">Tanıtım Videosu</a> · <a href="https://www.instagram.com/uysayemek/">Instagram</a></div></footer></body></html>',
+        f'<a href="https://uysayemek.blogspot.com/">Blog</a> · <a href="https://uysa-yemek-gebze.blogspot.com/">Gebze Blog</a> · <a href="https://uysa-yemek-kocaeli.blogspot.com/">Kocaeli Blog</a> · <a href="https://uysa-yemek-catering.blogspot.com/">Catering Blog</a> · <a href="https://uysa-yemek-hizmetleri.blogspot.com/">UYSA Yemek Hizmetleri Blog</a> · <a href="https://uysa-yemek.blogspot.com/">UYSA Yemek Gıda Güvenliği Blog</a> · <a href="https://uysa-tabldot.blogspot.com/">UYSA Tabldot Blog</a> · <a href="https://www.youtube.com/watch?v=RNWZN-WmlNU">Tanıtım Videosu</a> · <a href="https://www.instagram.com/uysayemek/">Instagram</a></div></footer></body></html>',
         encoding="utf-8")
     yazilan.append(str(yol.relative_to(KOK)).replace("\\", "/"))
 urls = [f"{SITE}/"] + [f"{SITE}/{p['slug']}/" for p in sayfalar[1:]]
 (KOK / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{u}</loc><lastmod>2026-10-29</lastmod></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
 (KOK / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
 (KOK / ".nojekyll").write_text("", encoding="utf-8")
-(KOK / "README.md").write_text("# UYSA Yemek Hizmetleri\n\nGebze ve Kocaeli'de kurumsal catering ve toplu yemek: taşımalı personel yemeği, yerinde yemekhane işletmeciliği, etkinlik cateringi. Ana site: https://uysayemek.com.tr · Kurumsal marka: https://yemekhaneci.com.tr\n", encoding="utf-8")
+(KOK / "README.md").write_text((KOK / "readme_sablon.md").read_text(encoding="utf-8"), encoding="utf-8")  # zengin README github.com sayfası olarak da aranır
 (KOK / "dosyalar.txt").write_text("\n".join(yazilan + ["sitemap.xml", "robots.txt", ".nojekyll", "README.md"]) + "\n", encoding="utf-8")
 print(len(sayfalar), "sayfa;", ", ".join(yazilan))
