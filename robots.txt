@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uysalfaruk19.github.io/uysa-yemek-hizmetleri/sitemap.xml
