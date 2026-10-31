@@ -33,6 +33,7 @@ Gebze, Çayırova, Dilovası, Darıca, Körfez, İzmit ve Kocaeli'nin diğer il�
 - UYSA Yemek Darıca: https://uysa-yemek-darica.blogspot.com/
 - UYSA Yemek Dilovası: https://uysa-yemek-dilovasi.blogspot.com/
 - UYSA Yemek İzmit: https://uysa-yemek-izmit.blogspot.com/
+- UYSA Yemek Körfez: https://uysa-yemek-korfez.blogspot.com/
 - Instagram: https://www.instagram.com/uysayemek/
 - Tanıtım videosu: https://www.youtube.com/watch?v=RNWZN-WmlNU
 
